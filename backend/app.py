@@ -1,1 +1,0 @@
-print("Born to win")
