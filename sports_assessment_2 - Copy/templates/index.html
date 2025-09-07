@@ -1,0 +1,26 @@
+c:\Users\akashmadhav\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\43CCA4B3DE2097B9558EFEFD0ECC3588\WhatsApp Image 2025-09-07 at 07.02.10_e3a5c8bb.jpg{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+  <div class="card shadow p-4">
+    <h2 class="text-center mb-4">Run a New Test</h2>
+    <form action="/analyze" method="post" enctype="multipart/form-data">
+      <div class="mb-3"><label class="form-label">Name</label><input type="text" name="name" class="form-control" required></div>
+      <div class="mb-3"><label class="form-label">Age</label><input type="number" name="age" class="form-control" required></div>
+      <div class="mb-3"><label class="form-label">Height (cm)</label><input type="number" name="height_cm" class="form-control" required></div>
+      <div class="mb-3"><label class="form-label">Weight (kg)</label><input type="number" name="weight_kg" class="form-control" required></div>
+      <div class="mb-3">
+        <label class="form-label">Choose Test</label>
+        <select name="test_type" class="form-select" required>
+          <option value="pushups">Push-ups</option>
+          <option value="jump">Vertical Jump</option>
+          <option value="punches">Punches</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Upload Video</label>
+        <input type="file" name="video" class="form-control" accept="video/*" required>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Analyze</button>
+    </form>
+  </div>
+{% endblock %}

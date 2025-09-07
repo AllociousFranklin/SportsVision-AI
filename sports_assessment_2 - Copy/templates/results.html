@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Results{% endblock %}
+{% block content %}
+  <div class="card shadow p-4">
+    <h1 class="mb-3">Analysis Results</h1>
+    <p><strong>User:</strong> {{ user.name }} (Age: {{ user.age }}, Height: {{ user.height_cm }} cm, Weight: {{ user.weight_kg }} kg)</p>
+    <p><strong>Test Type:</strong> {{ test_type }}</p>
+    <h4 class="mt-4">Findings:</h4>
+    <div class="alert alert-info"><pre class="mb-0">{{ findings }}</pre></div>
+    <a href="/" class="btn btn-secondary mt-3">🔙 Run Another Test</a>
+  </div>
+{% endblock %}
