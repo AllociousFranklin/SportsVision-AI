@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}Leaderboard{% endblock %}
+{% block content %}
+  <h1 class="text-center mb-5">🏆 Sports Leaderboard</h1>
+
+  <!-- Push-ups -->
+  <div class="card shadow mb-5">
+    <div class="card-header bg-primary text-white">💪 Push-ups Leaderboard</div>
+    <div class="card-body p-0">
+      <table class="table table-striped table-hover mb-0 text-center">
+        <thead class="table-dark"><tr><th>Rank</th><th>Name</th><th>Total Push-ups</th><th>Date</th></tr></thead>
+        <tbody>
+          {% for row in pushups_all %}
+            <tr><td>{{ loop.index }}</td><td>{{ row.name }}</td><td>{{ row.total_pushups }}</td><td>{{ row.analyzed_at }}</td></tr>
+          {% else %}
+            <tr><td colspan="4">No results yet.</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Jumps -->
+  <div class="card shadow mb-5">
+    <div class="card-header bg-success text-white">🦵 Vertical Jump Leaderboard</div>
+    <div class="card-body p-0">
+      <table class="table table-striped table-hover mb-0 text-center">
+        <thead class="table-dark"><tr><th>Rank</th><th>Name</th><th>Jump Height (cm)</th><th>Date</th></tr></thead>
+        <tbody>
+          {% for row in jumps_all %}
+            <tr><td>{{ loop.index }}</td><td>{{ row.name }}</td><td>{{ "%.2f"|format(row.jump_height_cm) }}</td><td>{{ row.analyzed_at }}</td></tr>
+          {% else %}
+            <tr><td colspan="4">No results yet.</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Punches -->
+  <div class="card shadow mb-5">
+    <div class="card-header bg-danger text-white">🥊 Punches Leaderboard</div>
+    <div class="card-body p-0">
+      <table class="table table-striped table-hover mb-0 text-center">
+        <thead class="table-dark"><tr><th>Rank</th><th>Name</th><th>Total punches</th><th>Date</th></tr></thead>
+        <tbody>
+          {% for row in punches_all %}
+            <tr><td>{{ loop.index }}</td><td>{{ row.name }}</td><td>{{ row.total_punches }}</td><td>{{ row.analyzed_at }}</td></tr>
+          {% else %}
+            <tr><td colspan="4">No results yet.</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <a href="/" class="btn btn-secondary">🔙 Back to Home</a>
+  </div>
+{% endblock %}

@@ -1,0 +1,54 @@
+/* General tweaks */
+body {
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+/* Cards */
+.card {
+    border-radius: 12px;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+/* Hero Section (landing page) */
+.display-4 {
+    color: #2c3e50;
+}
+.lead {
+    color: #555;
+}
+
+/* Tables */
+.table th {
+    background-color: #212529;
+    color: white;
+}
+.table-hover tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Flash message spacing */
+.alert {
+    margin-bottom: 1rem;
+}
+
+/* Custom back button */
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+}
+
+/* Inputs */
+.form-control, .form-select {
+    border-radius: 6px;
+}
